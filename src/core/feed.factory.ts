@@ -25,6 +25,7 @@ import {
   TimelineFeed,
   UserFeed,
   UsertagsFeed,
+  DiscoverExploreFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
 import { TimelineFeedReason } from '../types/timeline-feed.types';
@@ -56,6 +57,10 @@ export class FeedFactory {
 
   public discover(): DiscoverFeed {
     return new DiscoverFeed(this.client);
+  }
+
+  public discoverExplore(): DiscoverExploreFeed {
+    return new DiscoverExploreFeed(this.client);
   }
 
   public pendingFriendships(): PendingFriendshipsFeed {
