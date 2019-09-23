@@ -5,7 +5,7 @@ import { AccountFollowersFeedResponse, AccountFollowersFeedResponseUsersItem } f
 export class AccountFollowersFeed extends Feed<AccountFollowersFeedResponse, AccountFollowersFeedResponseUsersItem> {
   id: number | string;
   @Expose()
-  private nextMaxId: string;
+  public nextMaxId: string;
 
   set state(body: AccountFollowersFeedResponse) {
     this.moreAvailable = !!body.next_max_id;
@@ -16,6 +16,7 @@ export class AccountFollowersFeed extends Feed<AccountFollowersFeedResponse, Acc
     const { body } = await this.client.request.send<AccountFollowersFeedResponse>({
       url: `/api/v1/friendships/${this.id}/followers/`,
       qs: {
+        rank_token: this.rankToken,
         max_id: this.nextMaxId,
       },
     });

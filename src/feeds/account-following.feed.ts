@@ -5,7 +5,7 @@ import { AccountFollowingFeedResponse, AccountFollowingFeedResponseUsersItem } f
 export class AccountFollowingFeed extends Feed<AccountFollowingFeedResponse, AccountFollowingFeedResponseUsersItem> {
   id: number | string;
   @Expose()
-  private nextMaxId: string;
+  public nextMaxId: string;
 
   set state(body: AccountFollowingFeedResponse) {
     this.moreAvailable = !!body.next_max_id;
