@@ -1,5 +1,5 @@
 import { Repository } from '../core/repository';
-import Chance = require('chance');
+import * as Chance from 'chance';
 import {
   LiveSwitchCommentsResponseRootObject,
   LiveCreateBroadcastResponseRootObject,

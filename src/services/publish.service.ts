@@ -1,5 +1,5 @@
 import { Repository } from '../core/repository';
-import sizeOf = require('image-size');
+import * as sizeOf from 'image-size';
 import {
   MediaConfigureTimelineOptions,
   MediaConfigureTimelineVideoOptions,
@@ -15,7 +15,7 @@ import {
   IgResponse,
 } from '../types';
 import { PostingLocation, PostingStoryOptions } from '../types/posting.options';
-import Bluebird = require('bluebird');
+import * as Bluebird from 'bluebird';
 import { IgConfigureVideoError, IgResponseError, IgUploadVideoError } from '../errors';
 import { UploadRepositoryVideoResponseRootObject } from '../responses';
 

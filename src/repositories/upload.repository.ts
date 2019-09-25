@@ -1,7 +1,7 @@
 import { random } from 'lodash';
 import { Repository } from '../core/repository';
 import { UploadPhotoOptions } from '../types/upload.photo.options';
-import Chance = require('chance');
+import * as Chance from 'chance';
 import { UploadRepositoryPhotoResponseRootObject } from '../responses';
 import { UploadVideoOptions } from '../types/upload.video.options';
 

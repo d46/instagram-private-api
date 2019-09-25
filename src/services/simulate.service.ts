@@ -1,6 +1,6 @@
 import { shuffle } from 'lodash';
 import { Repository } from '../core/repository';
-import Bluebird = require('bluebird');
+import * as Bluebird from 'bluebird';
 
 export class SimulateService extends Repository {
   private get preLoginFlowRequests(): Array<() => any> {

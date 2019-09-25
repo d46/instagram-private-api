@@ -1,5 +1,5 @@
 import { IgApiClient, StorySticker } from '../src';
-import Bluebird = require('bluebird');
+import * as Bluebird from 'bluebird';
 import { readFile } from 'fs';
 
 const ig = new IgApiClient();
@@ -110,30 +110,36 @@ const lowerSticker = (width: number, height: number): StorySticker => ({
 async function uploadStoryWithHashtags(file: Buffer) {
   return await ig.publish.story({
     file,
-    hashtags: [{
-      ...upperSticker(0.9, 0.5),
-      is_sticker: true,
-      tag_name: 'insta',
-      use_custom_title: false,
-    }, {
-      ...lowerSticker(0.9, 0.5),
-      is_sticker: true,
-      tag_name: 'okay',
-      use_custom_title: false,
-    }],
+    hashtags: [
+      {
+        ...upperSticker(0.9, 0.5),
+        is_sticker: true,
+        tag_name: 'insta',
+        use_custom_title: false,
+      },
+      {
+        ...lowerSticker(0.9, 0.5),
+        is_sticker: true,
+        tag_name: 'okay',
+        use_custom_title: false,
+      },
+    ],
   });
 }
 
 async function uploadStoryWithMentions(file: Buffer) {
   return await ig.publish.story({
     file,
-    mentions: [{
-      ...upperSticker(0.9, 0.5),
-      user_id: await ig.user.getIdByUsername('user1'),
-    }, {
-      ...lowerSticker(0.9, 0.5),
-      user_id: await ig.user.getIdByUsername('user2'),
-    }],
+    mentions: [
+      {
+        ...upperSticker(0.9, 0.5),
+        user_id: await ig.user.getIdByUsername('user1'),
+      },
+      {
+        ...lowerSticker(0.9, 0.5),
+        user_id: await ig.user.getIdByUsername('user2'),
+      },
+    ],
   });
 }
 
@@ -176,15 +182,18 @@ async function uploadStoryWithPoll(file: Buffer) {
       viewer_vote: 0,
       viewer_can_vote: true,
       is_sticker: true,
-      tallies: [{
-        count: 0,
-        text: 'YES',
-        font_size: 20.0,
-      }, {
-        count: 0,
-        text: 'NO',
-        font_size: 20.0,
-      }],
+      tallies: [
+        {
+          count: 0,
+          text: 'YES',
+          font_size: 20.0,
+        },
+        {
+          count: 0,
+          text: 'NO',
+          font_size: 20.0,
+        },
+      ],
     },
   });
 }

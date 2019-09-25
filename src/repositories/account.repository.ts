@@ -19,7 +19,7 @@ import { IgResponse } from '../types/common.types';
 import { AccountTwoFactorLoginOptions } from '../types/account.two-factor-login.options';
 import { defaultsDeep } from 'lodash';
 import { IgSignupBlockError } from '../errors/ig-signup-block.error';
-import Bluebird = require('bluebird');
+import * as Bluebird from 'bluebird';
 
 export class AccountRepository extends Repository {
   public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {

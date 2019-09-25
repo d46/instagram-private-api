@@ -1,6 +1,6 @@
 import { Repository } from '../core/repository';
-import Chance = require('chance');
-import Bluebird = require('bluebird');
+import * as Chance from 'chance';
+import * as Bluebird from 'bluebird';
 
 export class ConsentRepository extends Repository {
   public async auto() {

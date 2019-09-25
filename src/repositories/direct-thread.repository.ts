@@ -7,7 +7,7 @@ import {
   StatusResponse,
 } from '../responses';
 import { DirectThreadBroadcastOptions } from '../types';
-import Chance = require('chance');
+import * as Chance from 'chance';
 import { DirectThreadRepositoryApproveParticipantRequestResponseRootObject } from '../responses';
 
 export class DirectThreadRepository extends Repository {

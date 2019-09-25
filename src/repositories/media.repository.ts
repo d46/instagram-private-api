@@ -25,7 +25,7 @@ import {
   MediaConfigureTimelineVideoOptions,
 } from '../types';
 import { MediaRepositoryConfigureResponseRootObject } from '../responses';
-import Chance = require('chance');
+import * as Chance from 'chance';
 import { MediaRepositoryCheckOffensiveCommentResponseRootObject } from '../responses';
 
 export class MediaRepository extends Repository {

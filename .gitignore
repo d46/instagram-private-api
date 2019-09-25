@@ -10,4 +10,16 @@ sandbox.*
 Untitled*
 .idea
 .env
-dist
+
+# Directories
+core
+decorators
+entities
+errors
+feeds
+repositories
+responses
+services
+tools
+samples
+types

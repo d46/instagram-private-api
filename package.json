@@ -2,11 +2,6 @@
   "name": "instagram-private-api",
   "description": "Instagram private API wrapper for full access to instagram",
   "version": "1.29.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "license": "MIT",
   "engines": {
     "node": ">=8.0.0"
@@ -21,7 +16,8 @@
   },
   "homepage": "https://github.com/dilame/instagram-private-api",
   "scripts": {
-    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "clean": "rm -rf core decorators entities errors feeds repositories responses services tools samples types",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "typecheck": "tsc -p tsconfig.build.json --noEmit",
@@ -47,10 +43,10 @@
     "lodash": "^4.17.5",
     "luxon": "^1.12.1",
     "reflect-metadata": "^0.1.13",
-    "request": "^2.88.0",
+    "request": "2.88.0",
     "request-promise": "^4.2.4",
     "rxjs": "^6.5.2",
-    "tough-cookie": "^2.5.0",
+    "tough-cookie": "^3.0.1",
     "ts-custom-error": "^2.2.2",
     "ts-xor": "^1.0.6",
     "url-regex": "^5.0.0"

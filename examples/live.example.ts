@@ -1,6 +1,6 @@
 /* tslint:disable:no-console */
 import { IgApiClient, LiveEntity } from '../src';
-import Bluebird = require('bluebird');
+import * as Bluebird from 'bluebird';
 
 const ig = new IgApiClient();
 
@@ -40,7 +40,7 @@ async function login() {
    * note: comments can only be requested roughly every 2s
    */
 
-    // initial comment-timestamp = 0, get all comments
+  // initial comment-timestamp = 0, get all comments
   let lastCommentTs = await printComments(broadcast_id, 0);
 
   // enable the comments

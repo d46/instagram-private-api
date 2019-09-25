@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { IgApiClient, IgCheckpointError } from '../src';
-import Bluebird = require('bluebird');
-import inquirer = require('inquirer');
+import * as Bluebird from 'bluebird';
+import * as inquirer from 'inquirer';
 
 (async () => {
   const ig = new IgApiClient();
